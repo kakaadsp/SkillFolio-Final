@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_soft_gradient">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Top Bar -->
+            <LinearLayout
+                android:id="@+id/top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="12dp"
+                android:gravity="center_vertical"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SKILLFOLIO"
+                    android:textColor="@color/dark_olive"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/poppins_black"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <!-- Header Avatar — Clickable to change photo -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp">
+
+                <!-- Circular photo container -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_avatar_wrapper"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iv_avatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_avatar"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Foto Profil" />
+                </androidx.cardview.widget.CardView>
+
+                <!-- Camera badge overlay -->
+                <FrameLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_circle_camera"
+                    app:layout_constraintBottom_toBottomOf="@id/cv_avatar_wrapper"
+                    app:layout_constraintEnd_toEndOf="@id/cv_avatar_wrapper"
+                    android:elevation="6dp"
+                    android:padding="6dp"
+                    android:clickable="false">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_camera"
+                        android:contentDescription="Ganti Foto" />
+                </FrameLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Ketuk foto untuk mengubah"
+                android:textColor="#888888"
+                android:textSize="12sp" />
+
+            <!-- ══ SECTION: Informasi Dasar ══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="Informasi Dasar"
+                android:textColor="@color/dark_olive"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/bg_light_blue_gray">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Nama Lengkap -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Lengkap"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/et_nama"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_input_edit_profile"
+                        android:hint="Masukkan nama lengkap"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp" />
+
+                    <!-- Email (non-editable) -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_input_edit_profile"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#888888"
+                        android:textSize="14sp"
+                        android:enabled="false" />
+
+                    <!-- No HP -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No HP"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_input_edit_profile"
+                        android:hint="Contoh: 081234567890"
+                        android:inputType="phone"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp" />
+
+                    <!-- Program Studi -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Program Studi"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/et_prodi"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_input_edit_profile"
+                        android:hint="Contoh: Teknik Informatika"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp" />
+
+                    <!-- Universitas -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Universitas / Instansi"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/et_universitas"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_input_edit_profile"
+                        android:hint="Contoh: Universitas Brawijaya"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp" />
+
+                    <!-- Bio -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bio / Tentang Saya"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/et_bio"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_input_edit_profile"
+                        android:hint="Ceritakan sedikit tentang dirimu..."
+                        android:inputType="textMultiLine"
+                        android:gravity="top"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp" />
+
+                    <!-- Password -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Password"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_input_edit_profile"
+                        android:hint="Masukkan password baru"
+                        android:inputType="textPassword"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ══ SECTION: Kontak & Sosial Media ══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="Kontak &amp; Sosial Media"
+                android:textColor="@color/dark_olive"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/bg_light_blue_gray">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Lokasi -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📍 Lokasi"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/et_lokasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_input_edit_profile"
+                        android:hint="Contoh: Surabaya, Jawa Timur"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp" />
+
+                    <!-- LinkedIn -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔗 LinkedIn"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/et_linkedin"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_input_edit_profile"
+                        android:hint="linkedin.com/in/username"
+                        android:inputType="textUri"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp" />
+
+                    <!-- GitHub -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💻 GitHub"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/et_github"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_input_edit_profile"
+                        android:hint="github.com/username"
+                        android:inputType="textUri"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Bottom Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="32dp"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_batal"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_btn_secondary"
+                    android:text="Batal"
+                    android:textAllCaps="false"
+                    android:textColor="#1A1A1A"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_simpan"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_btn_primary"
+                    android:text="Simpan"
+                    android:textAllCaps="false"
+                    android:textColor="#1A1A1A"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

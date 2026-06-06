@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_soft_gradient"
+    tools:context=".CvGeneratorActivity">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SKILLFOLIO"
+            android:textColor="@color/dark_olive"
+            android:textSize="24sp"
+            android:fontFamily="@font/poppins_black"
+            android:textStyle="normal" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_avatar"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="centerCrop"
+            android:contentDescription="User Profile Picture"
+            app:shapeAppearanceOverlay="@style/CircleImageStyle"
+            style="@style/Widget.MaterialComponents.ShapeableImageView" />
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Hero Image/Mockup Layout -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_card_gray"
+                android:layout_marginBottom="20dp">
+
+                <!-- Representation of CV doc sheet -->
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:padding="12dp"
+                    android:orientation="vertical"
+                    android:elevation="4dp">
+
+                    <View
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="#DDE3EC"
+                        android:layout_marginBottom="8dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:background="#DDE3EC"
+                        android:layout_marginBottom="6dp" />
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_height="8dp"
+                        android:background="#DDE3EC"
+                        android:layout_marginBottom="12dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="#EEF2F8"
+                        android:layout_marginBottom="4dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="#EEF2F8"
+                        android:layout_marginBottom="4dp" />
+
+                    <View
+                        android:layout_width="70dp"
+                        android:layout_height="6dp"
+                        android:background="#EEF2F8" />
+                </LinearLayout>
+
+                <!-- PDF Pill Overlay -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/bg_tag_pill"
+                    android:backgroundTint="@color/primary_yellow"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:text="PDF • 2024"
+                    android:textColor="#1A1A1A"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buat CV profesional secara otomatis dari data portofolio Anda."
+                android:textColor="#1A1A1A"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Buat CV digital yang memukau dari portofolio, pengalaman organisasi, dan kompetensi yang telah Anda verifikasi."
+                android:textColor="#888888"
+                android:textSize="13sp"
+                android:lineSpacingExtra="3sp" />
+
+            <!-- Feature Cards Horizontal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp"
+                android:weightSum="2">
+
+                <!-- Feature 1 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/bg_card_gray"
+                    android:padding="16dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_folder_star"
+                        app:tint="@color/dark_olive"
+                        android:contentDescription="Auto template" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Template Otomatis"
+                        android:textSize="12sp"
+                        android:textColor="#1A1A1A"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Feature 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_card_gray"
+                    android:padding="16dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_check_circle"
+                        app:tint="@color/dark_olive"
+                        android:contentDescription="Sync" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Sinkronisasi"
+                        android:textSize="12sp"
+                        android:textColor="#1A1A1A"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Disabled Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_unduh_cv"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_btn_primary"
+                android:backgroundTint="#CCCCCC"
+                android:text="🔒 Available in Future Updates"
+                android:textAllCaps="false"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:enabled="false"
+                android:clickable="false"
+                android:focusable="false" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        app:elevation="8dp"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+        app:itemActiveIndicatorStyle="@style/CustomActiveIndicator"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

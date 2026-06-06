@@ -1,0 +1,70 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="240dp"
+    android:viewportWidth="360"
+    android:viewportHeight="240">
+
+    <!-- Black Background -->
+    <path
+        android:fillColor="#1A1A1A"
+        android:pathData="M0,0h360v240h-360z"/>
+
+    <!-- Carbon Fiber Textured Lines on Black Background -->
+    <path
+        android:strokeColor="#2B2B2B"
+        android:strokeWidth="1.5"
+        android:pathData="M220,0 L360,140 M240,0 L360,120 M260,0 L360,100 M280,0 L360,80 M300,0 L360,60 M320,0 L360,40 M340,0 L360,20"/>
+    <path
+        android:strokeColor="#2B2B2B"
+        android:strokeWidth="1.5"
+        android:pathData="M160,0 L360,200 M180,0 L360,180 M200,0 L360,160 M220,40 L360,180 M240,60 L360,180 M260,80 L360,180 M280,100 L360,180 M300,120 L360,180"/>
+
+    <!-- Yellow Background on Left -->
+    <path
+        android:fillColor="#FFD600"
+        android:pathData="M0,0h210c-30,50 -65,100 -65,150c0,50 35,70 35,90H0Z"/>
+
+    <!-- Magnifying Glass Circle (Top Right-Center) -->
+    <!-- Yellow Outer Ring -->
+    <path
+        android:fillColor="#FFD600"
+        android:pathData="M210,60m-36,0a36,36 0,1 1,72 0a36,36 0,1 1,-72 0"/>
+    <!-- Black Inner Circle -->
+    <path
+        android:fillColor="#1A1A1A"
+        android:pathData="M210,60m-33,0a33,33 0,1 1,66 0a33,33 0,1 1,-66 0"/>
+    <!-- Document Icon Inside -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M202,48h10c1.1,0 2,0.9 2,2v14c0,1.1 -0.9,2 -2,2h-10c-1.1,0 -2,-0.9 -2,-2v-14c0,-1.1 0.9,-2 2,-2zm2,3v2h6v-2h-6zm0,4v2h6v-2h-6zm0,4v2h4v-2h-4z"/>
+    <!-- Magnifying Glass Inside -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.5"
+        android:fillColor="#00000000"
+        android:pathData="M217,59 A 5.5 5.5 0 1 1 217,58 Z M221,63 L228,70"/>
+
+    <!-- Gears Circle (Center) -->
+    <!-- Yellow Outer Ring -->
+    <path
+        android:fillColor="#FFD600"
+        android:pathData="M150,150m-36,0a36,36 0,1 1,72 0a36,36 0,1 1,-72 0"/>
+    <!-- Black Inner Circle -->
+    <path
+        android:fillColor="#1A1A1A"
+        android:pathData="M150,150m-33,0a33,33 0,1 1,66 0a33,33 0,1 1,-66 0"/>
+    <!-- Gear 1 Inside -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M141.5,142.5l1,1.7l1.7,-0.7l0.7,1.6l-1.7,1l1,1.7l1.7,-0.7l0.3,1.6l-1.6,0.3l-0.3,1.6h-1.6l-0.3,-1.6l-1.6,-0.3l0.3,-1.6l1.3,-0.5l-0.8,-1.3l-1.3,0.5l-0.5,-1.6l1.3,-0.8l-1,-1.7l-1.7,0.7l-0.7,-1.6l1.7,-1l-1,-1.7l-1.7,0.7l-0.3,-1.6l1.6,-0.3l0.3,-1.6h1.6l0.3,1.6l1.6,0.3L139,141.6L140.3,141l-1,-1.7l-1.7,0.7l-0.7,-1.6l1.7,-1Z M141.5,146.5a2.7,2.7 0,1 0 0,5.4 2.7,2.7 0,1 0 0,-5.4Z"/>
+    <!-- Gear 2 Inside -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M156.5,153.5l1.3,2.2l2.2,-0.9l0.9,2.1l-2.2,1.3l1.3,2.2l2.2,-0.9l0.4,2.1l-2.1,0.4l-0.4,2.1h-2.1l-0.4,-2.1l-2.1,-0.4l0.4,-2.1l1.7,-0.7l-1.1,-1.7l-1.7,0.7l-0.7,-2.1l1.7,-1.1l-1.3,-2.2l-2.2,0.9l-0.9,-2.1l2.2,-1.3l-1.3,-2.2l-2.2,0.9l-0.4,-2.1l2.1,-0.4l0.4,-2.1h2.1l0.4,2.1l2.1,0.4l-0.4,2.1L155.6,152l1.7,-1.1l-1.3,-2.2Z M156.5,158.5a3.5,3.5 0,1 0 0,7 3.5,3.5 0,1 0 0,-7Z"/>
+
+    <!-- Bottom Wave Cutout (matching screen background color #EEF2F8) -->
+    <path
+        android:fillColor="#EEF2F8"
+        android:pathData="M0,200c90,-25 110,35 180,35c70,0 90,-60 180,-35v45H0Z"/>
+
+</vector>

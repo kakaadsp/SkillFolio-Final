@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEF2F8"
+    tools:context=".PengaturanActivity">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:gravity="center_vertical"
+        android:background="#EEF2F8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SKILLFOLIO"
+            android:textColor="@color/dark_olive"
+            android:textSize="24sp"
+            android:fontFamily="@font/poppins_black"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <!-- Header Section with gradient background -->
+    <LinearLayout
+        android:id="@+id/header_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_profile_header_gradient"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="20dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_profile_avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_avatar"
+            android:contentDescription="Profile Picture" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Pengguna"
+                android:textColor="#1A1A1A"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="email@example.com"
+                android:textColor="#888888"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/header_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toBottomOf="@id/header_section"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Menu items with values on the right -->
+    <LinearLayout
+        android:id="@+id/menu_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/header_divider"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Item 1: Bahasa -->
+        <LinearLayout
+            android:id="@+id/row_bahasa"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_setting_row"
+            android:paddingHorizontal="16dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            android:clickable="true"
+            android:focusable="true">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Bahasa"
+                android:textColor="#1A1A1A"
+                android:textSize="15sp" />
+            
+            <TextView
+                android:id="@+id/tv_bahasa_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indonesia"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Item 2: Notifikasi -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_setting_row"
+            android:paddingHorizontal="16dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Notifikasi"
+                android:textColor="#1A1A1A"
+                android:textSize="15sp" />
+            
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_notifikasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                app:thumbTint="@color/primary_yellow"
+                app:trackTint="#D3D3D3" />
+        </LinearLayout>
+
+        <!-- Item 3: Lokasi -->
+        <LinearLayout
+            android:id="@+id/row_lokasi"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_setting_row"
+            android:paddingHorizontal="16dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Lokasi"
+                android:textColor="#1A1A1A"
+                android:textSize="15sp" />
+            
+            <TextView
+                android:id="@+id/tv_lokasi_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Surabaya, Jawa Timur"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E8E8E8"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Item 4: Ubah kata sandi -->
+        <LinearLayout
+            android:id="@+id/row_ubah_sandi"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_setting_row"
+            android:paddingHorizontal="16dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            android:clickable="true"
+            android:focusable="true">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubah kata sandi"
+                android:textColor="#1A1A1A"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- Item 5: Privasi data -->
+        <LinearLayout
+            android:id="@+id/row_privasi_data"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_setting_row"
+            android:paddingHorizontal="16dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp"
+            android:clickable="true"
+            android:focusable="true">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Privasi data"
+                android:textColor="#1A1A1A"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        app:elevation="8dp"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+        app:itemActiveIndicatorStyle="@style/CustomActiveIndicator"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

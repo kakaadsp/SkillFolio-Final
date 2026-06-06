@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Akses galeri foto untuk upload foto profil -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <!-- Fallback untuk Android 12 ke bawah -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SkillFolioFinal">
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ListPengalamanActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TambahPengalamanActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ListProjectActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TambahProjectActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".EditProfilActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PengaturanActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TambahKeahlianActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".VerifikasiActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".VerifikasiSuksesActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".VerifikasiDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".KelengkapanProfilActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".CvGeneratorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DetailPengalamanActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DetailProjectActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TotalPengalamanActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
