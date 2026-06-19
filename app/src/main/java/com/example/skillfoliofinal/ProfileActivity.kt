@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ProfileActivity : AppCompatActivity() {
@@ -63,6 +64,11 @@ class ProfileActivity : AppCompatActivity() {
         }
         findViewById<LinearLayout>(R.id.menu_keluar).setOnClickListener {
             showLogoutConfirmDialog()
+        }
+
+        // ── Template Otomatis card → buka CV Preview ─────────────────────────
+        findViewById<CardView>(R.id.card_template_otomatis).setOnClickListener {
+            AppUtils.navigateTo(this, Intent(this, CvPreviewActivity::class.java))
         }
 
         // LinkedIn click → open link

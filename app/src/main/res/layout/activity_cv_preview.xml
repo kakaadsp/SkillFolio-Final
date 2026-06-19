@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEF2F8"
+    tools:context=".CvPreviewActivity">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_back"
+                android:padding="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Kembali" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Pratinjau CV"
+                android:textColor="#063669"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_black"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Scrollable CV Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="120dp">
+
+            <!-- CV Document Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- ===== PROFILE HEADER ===== -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- Profile Photo -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="88dp"
+                            android:layout_height="88dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="3dp">
+
+                            <ImageView
+                                android:id="@+id/iv_cv_photo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_avatar"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="Foto Profil" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Name & Title -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="16dp">
+
+                            <TextView
+                                android:id="@+id/tv_cv_nama"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nama Pengguna"
+                                android:textColor="#063669"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/poppins_black"
+                                android:textStyle="normal"
+                                tools:text="Kaka Dimas S.P." />
+
+                            <TextView
+                                android:id="@+id/tv_cv_prodi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text=""
+                                android:textColor="#705D00"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                tools:text="Computer Science" />
+
+                            <TextView
+                                android:id="@+id/tv_cv_universitas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#888888"
+                                android:textSize="11sp"
+                                tools:text="UPN Veteran Jawa Timur" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Contact Info Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp"
+                        android:background="#F5F8FF"
+                        android:padding="12dp">
+
+                        <!-- android:shape="rectangle" border -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="✉"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_cv_email"
+                                android:layout_width="0dp"
+                                android:layout_weight="5"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#434653"
+                                android:textSize="11sp"
+                                tools:text="kaka@email.com" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="📞"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_cv_phone"
+                                android:layout_width="0dp"
+                                android:layout_weight="5"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#434653"
+                                android:textSize="11sp"
+                                tools:text="+62 812 3456 7890" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="📍"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_cv_lokasi"
+                                android:layout_width="0dp"
+                                android:layout_weight="5"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textColor="#434653"
+                                android:textSize="11sp"
+                                tools:text="Surabaya, Indonesia" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="🔗"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_cv_linkedin"
+                                android:layout_width="0dp"
+                                android:layout_weight="5"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textColor="#0A66C2"
+                                android:textSize="11sp"
+                                tools:text="linkedin.com/in/kaka" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Bio -->
+                    <LinearLayout
+                        android:id="@+id/section_bio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tv_cv_bio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#555555"
+                            android:textSize="12sp"
+                            android:lineSpacingExtra="3sp"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                    <!-- ===== DIVIDER ===== -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E0E8F4"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="4dp" />
+
+                    <!-- ===== PENGALAMAN SECTION ===== -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="12dp">
+
+                        <View
+                            android:layout_width="4dp"
+                            android:layout_height="22dp"
+                            android:background="#063669" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="PENGALAMAN KERJA"
+                            android:textColor="#063669"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/poppins_black"
+                            android:textStyle="normal"
+                            android:letterSpacing="0.08" />
+
+                    </LinearLayout>
+
+                    <!-- Pengalaman Container (dynamically populated) -->
+                    <LinearLayout
+                        android:id="@+id/container_pengalaman"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                    <!-- Empty state for pengalaman -->
+                    <TextView
+                        android:id="@+id/tv_empty_pengalaman"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Belum ada pengalaman kerja yang ditambahkan."
+                        android:textColor="#AAAAAA"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:visibility="gone" />
+
+                    <!-- ===== DIVIDER ===== -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E0E8F4"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="4dp" />
+
+                    <!-- ===== PROYEK SECTION ===== -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="12dp">
+
+                        <View
+                            android:layout_width="4dp"
+                            android:layout_height="22dp"
+                            android:background="#FCD400" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="PROYEK UTAMA"
+                            android:textColor="#063669"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/poppins_black"
+                            android:textStyle="normal"
+                            android:letterSpacing="0.08" />
+
+                    </LinearLayout>
+
+                    <!-- Project Container (dynamically populated) -->
+                    <LinearLayout
+                        android:id="@+id/container_project"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                    <!-- Empty state for project -->
+                    <TextView
+                        android:id="@+id/tv_empty_project"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Belum ada proyek yang ditambahkan."
+                        android:textColor="#AAAAAA"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ATS Info Tip -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="#EAF0FB"
+                android:layout_marginTop="16dp"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ℹ"
+                    android:textColor="#063669"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="CV Anda telah dioptimalkan secara otomatis untuk ATS (Applicant Tracking Systems)."
+                    android:textColor="#063669"
+                    android:textSize="11sp"
+                    android:lineSpacingExtra="2sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Sticky Actions -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="#FFFFFFFF"
+        android:elevation="12dp"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="16dp">
+
+        <!-- Share Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/bg_card_gray"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔗  Kirim Link"
+                android:textColor="#063669"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

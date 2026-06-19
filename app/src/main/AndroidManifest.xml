@@ -97,6 +97,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".CvPreviewActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".DetailPengalamanActivity"
             android:exported="false" />
 

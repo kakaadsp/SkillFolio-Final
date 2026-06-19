@@ -3,6 +3,7 @@ package com.example.skillfoliofinal
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -19,6 +20,11 @@ class CvGeneratorActivity : AppCompatActivity() {
 
         ivAvatar.setOnClickListener {
             startActivity(Intent(this, ProfileActivity::class.java))
+        }
+
+        // ── Template Otomatis card → buka CV Preview ─────────────────────────
+        findViewById<LinearLayout>(R.id.card_template_otomatis).setOnClickListener {
+            AppUtils.navigateTo(this, Intent(this, CvPreviewActivity::class.java))
         }
 
         // Setup bottom nav selection & listener
